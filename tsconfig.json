@@ -1,0 +1,22 @@
+{
+    "ts-node": {
+        // Tell ts-node CLI to install the --loader automatically
+        "esm": true
+    },
+    "compilerOptions": {
+        "outDir": "dist",
+        "module": "ESNext",
+        "target": "ESNext",
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "noEmit": true,
+        "moduleResolution": "Bundler"
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
