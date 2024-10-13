@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { greet } from './index';
+import { SSIN } from './index';
 
-describe('greet function', () => {
-  it('should return a greeting message', () => {
-    const result = greet('John');
-    expect(result).toBe('Hello, John!');
+describe('Basic test on SSIN', () => {
+  it('should format a valid ssin', () => {
+    const ssin = new SSIN('05020940753');
+    expect(ssin.getFormattedSSIN()).toBe('05.02.09-407.53');
   });
 });

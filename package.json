@@ -1,10 +1,10 @@
 {
-  "name": "my-ts-lib-cli",
+  "name": "ssin-lib",
   "version": "O.0.1",
   "type": "module",
   "main": "dist/lib/index.cjs",
   "module": "dist/lib/index.js",
-  "bin": "dist/niss-cli.js",
+  "bin": "dist/sinn-cli.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
