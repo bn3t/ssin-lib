@@ -1,3 +1,5 @@
+![Build Status](https://github.com/bn3t/ssin-lib/actions/workflows/ci.yml/badge.svg)
+
 # SSIN Library
 
 A TypeScript library for handling and manipulating SSIN (Social Security Identification Number) in a consistent and robust manner. This library provides functionality for validation, formatting, extracting details like birthdate, gender, and generating SSIN numbers.
