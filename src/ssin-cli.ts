@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { Command, program } from 'commander';
-// import packageJson from '../package.json';
+import { program } from 'commander';
+import packageJson from '../package.json';
 
 import { SSIN } from '@/lib/SSIN.js';
 import { LocalDate } from '@/lib/types.js';
@@ -33,7 +33,7 @@ program
   .description('Generate or validate SSIN numbers')
   .configureHelp({ showGlobalOptions: true })
   .showHelpAfterError()
-  .version('0.0.1');
+  .version(packageJson.version);
 
 program
   .command('validate')
