@@ -1,31 +1,42 @@
+name: Release Please Workflow
+
 on:
   push:
     branches:
       - main
-name: release-please
-permissions: {}
+
+permissions:
+  contents: write # to create release commit (google-github-actions/release-please-action)
+  pull-requests: write # to create release PR (google-github-actions/release-please-action)
+
 jobs:
   release-please:
-    permissions:
-      contents: write # to create release commit (google-github-actions/release-please-action)
-      pull-requests: write # to create release PR (google-github-actions/release-please-action)
-
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v3
-        id: release
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Release Please
+        uses: google-github-actions/release-please-action@v3
         with:
           release-type: node
-          package-name: '@bn3t/ssin'
+          package-name: '@bn3t/ssin-lib'
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 18
-      - run: npm install npm@latest -g
-      - run: npm ci
-      - run: npm run build
+
+      - name: Build project
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm ci
+        run: npm run build
+
+      - name: Publish to npm
         if: ${{ steps.release.outputs.release_created }}
+        run: npm publish --access public
