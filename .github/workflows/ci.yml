@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [assigned, opened, synchronize, reopened, labeled]
+name: ci
+permissions:
+  contents: read # to fetch code (actions/checkout)
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install -g npm@10
+      - run: node --version
+      - run: npm ci
+      - run: npm run test
