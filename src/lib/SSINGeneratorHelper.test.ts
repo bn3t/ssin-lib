@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 
-import { SSINGeneratorHelper } from './SSINGeneratorHelper';
-import { SSINValidatorHelper } from './SSINValidatorHelper';
-import { LocalDate, Gender, Type } from './types';
+import { SSINGeneratorHelper } from '@/lib/SSINGeneratorHelper';
+import { SSINValidatorHelper } from '@/lib/SSINValidatorHelper';
+import { LocalDate, Gender, Type } from '@/lib/types';
 
 describe('SSIN Generator Helper', () => {
   it('should generate a valid SSIN for a male born on 1 Jan 2000', () => {
@@ -46,6 +46,15 @@ describe('SSIN Generator Helper', () => {
     const birthDate = LocalDate.of(1942, 1, 22);
     const gender = Gender.FEMALE;
     const ssin = SSINGeneratorHelper.generate(birthDate, gender, 2, Type.UNOFFICIAL);
+    expect(ssin).toBe('42812200211');
+    expect(SSINValidatorHelper.isValid(ssin)).toBe(true);
+  });
+
+  it('should generate a unknown birthdate', () => {
+    const birthDate = LocalDate.of(1940, 0, 0);
+    const gender = Gender.MALE;
+    const ssin = SSINGeneratorHelper.generate(birthDate, gender, 955, Type.REGULAR);
+    expect(ssin).toBe('40000095579');
     expect(SSINValidatorHelper.isValid(ssin)).toBe(true);
   });
 });

@@ -1,1 +1,1 @@
-export { SSIN } from './SSIN';
+export { SSIN } from '@/lib/SSIN';

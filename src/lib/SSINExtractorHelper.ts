@@ -1,5 +1,5 @@
-import { SSINValidatorHelper } from './SSINValidatorHelper';
-import { Type, Gender, LocalDate } from './types';
+import { SSINValidatorHelper } from '@/lib/SSINValidatorHelper';
+import { Type, Gender, LocalDate } from '@/lib/types';
 
 export class SSINExtractorHelper {
   public static calculateBirthdate(ssin: string, type: Type, gender: Gender): LocalDate | null {

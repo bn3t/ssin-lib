@@ -1,6 +1,7 @@
-import { Type, Gender, LocalDate } from './types';
-import { SSINExtractorHelper } from './SSINExtractorHelper';
-import { SSINValidatorHelper } from './SSINValidatorHelper';
+import { Type, Gender, LocalDate } from '@/lib/types';
+import { SSINExtractorHelper } from '@/lib/SSINExtractorHelper';
+import { SSINValidatorHelper } from '@/lib/SSINValidatorHelper';
+import { SSINGeneratorHelper } from '@/lib/SSINGeneratorHelper';
 
 export class SSIN {
   private ssin: string;
@@ -51,5 +52,16 @@ export class SSIN {
 
   public getType(): Type {
     return this.type;
+  }
+
+  public static generateFromBirthdateAndOrderNumber(birthdate: LocalDate, orderNumber: number): SSIN {
+    return new SSIN(
+      SSINGeneratorHelper.generate(
+        birthdate,
+        orderNumber % 2 === 1 ? Gender.MALE : Gender.FEMALE,
+        orderNumber,
+        Type.REGULAR,
+      ),
+    );
   }
 }

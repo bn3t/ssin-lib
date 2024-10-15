@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { SSIN } from './index';
+import { SSIN } from '@/lib/index';
 
 describe('Basic test on SSIN', () => {
   it('should format a valid ssin', () => {

@@ -1,5 +1,5 @@
-import { Type, Gender, LocalDate } from './types';
-import { SSINValidatorHelper } from './SSINValidatorHelper';
+import { Type, Gender, LocalDate } from '@/lib/types';
+import { SSINValidatorHelper } from '@/lib/SSINValidatorHelper';
 
 export class SSINGeneratorHelper {
   public static generate(birthDate: LocalDate, gender: Gender, orderNumber: number | null = null, type: Type): string {

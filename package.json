@@ -12,9 +12,9 @@
   "scripts": {
     "build": "npm run lint && npm run build:check && npm run build:js",
     "build:check": "tsc --noEmit",
-    "build:js": "tsup-node --entry src/niss-cli.ts --entry src/lib/index.ts --format cjs,esm --dts --sourcemap",
+    "build:js": "tsup-node --entry src/ssin-cli.ts --entry src/lib/index.ts --format cjs,esm --dts --sourcemap",
     "clean": "rimraf dist node_modules",
-    "start": "node --no-warnings=ExperimentalWarning --loader ts-node/esm ./src/niss-cli.ts",
+    "start": "bun ./src/ssin-cli.ts",
     "test": "vitest",
     "lint": "eslint"
   },
@@ -28,6 +28,10 @@
     "ts-node": "^10.9.2",
     "tsup": "^8.3.0",
     "typescript": "^5.6.3",
+    "vite-tsconfig-paths": "^5.0.1",
     "vitest": "^2.1.2"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
   }
 }

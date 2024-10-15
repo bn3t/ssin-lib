@@ -1,19 +1,15 @@
 import { describe, it, expect } from 'vitest';
 
-import { SSINExtractorHelper } from './SSINExtractorHelper';
-import { Gender, LocalDate, Type } from './types';
+import { SSINExtractorHelper } from '@/lib/SSINExtractorHelper';
+import { Gender, LocalDate, Type } from '@/lib/types';
 
 describe('SSIN Extractor Helper', () => {
-  it('should correctly calculate birthdate for a regular SSIN', () => {
-    const ssin = '42012205181'; // Male born on 22 Jan 1942
-    const birthdate = SSINExtractorHelper.calculateBirthdate(ssin, Type.REGULAR, Gender.MALE);
-    expect(birthdate).toEqual(LocalDate.of(1942, 1, 22));
-  });
-
-  it('should return null for an SSIN with unknown DOB type', () => {
-    const ssin = '00000000000'; // DOB unknown
-    const birthdate = SSINExtractorHelper.calculateBirthdate(ssin, Type.DOB_UNKNOWN, Gender.UNKNOWN);
-    expect(birthdate).toBeNull();
+  it.each([
+    ['42012205181', Type.REGULAR, Gender.MALE, LocalDate.of(1942, 1, 22)],
+    ['00000000000', Type.DOB_UNKNOWN, Gender.UNKNOWN, null],
+  ])('should correctly calculate birthdate for %s, %s, %s', (ssin, type, gender, expectedDate) => {
+    const birthdate = SSINExtractorHelper.calculateBirthdate(ssin, type, gender);
+    expect(birthdate).toEqual(expectedDate);
   });
 
   it('should correctly calculate gender as female', () => {
