@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.8](https://github.com/bn3t/ssin-lib/compare/v0.0.7...v0.0.8) (2024-10-16)
+
+
+### Miscellaneous Chores
+
+* fix release-please.yml ([42a1480](https://github.com/bn3t/ssin-lib/commit/42a1480ff3974782abd4f58226399a8f731b5db9))
+
 ## [0.0.7](https://github.com/bn3t/ssin-lib/compare/v0.0.6...v0.0.7) (2024-10-16)
 
 
