@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.3](https://github.com/bn3t/ssin-lib/compare/v0.0.3...v0.0.3) (2024-10-16)
+
+
+### Miscellaneous Chores
+
+* fix package.json ([0ddca04](https://github.com/bn3t/ssin-lib/commit/0ddca047c0e26721bb5a2c119b8494cce2eec24b))
+
 ## [0.0.3](https://github.com/bn3t/ssin-lib/compare/v0.0.2...v0.0.3) (2024-10-16)
 
 
