@@ -5,7 +5,7 @@
   "main": "dist/lib/index.cjs",
   "module": "dist/lib/index.js",
   "bin": {
-    "ssin": "./dist/ssin-cli.js"
+    "ssin": "dist/ssin-cli.js"
   },
   "types": "dist/index.d.ts",
   "files": [
