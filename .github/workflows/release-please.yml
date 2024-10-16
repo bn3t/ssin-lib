@@ -24,11 +24,9 @@ jobs:
         with:
           node-version: 20
           scope: '@bn3t'
+          registry-url: 'https://registry.npmjs.org'
       - run: npm install npm@latest -g
-      - run: npm ci
-      - run: npm run build
-        if: ${{ steps.release.outputs.release_created }}
-      - run: npm ci
+      - run: npm ci && npm run build
         if: ${{ steps.release.outputs.release_created }}
       - run: npm publish
         env:
