@@ -1,6 +1,14 @@
 {
   "name": "@bn3t/ssin-lib",
   "version": "0.0.8",
+  "description": "Library and CLI for Belgian SSIN generation and validation",
+  "author": "Bernard Niset",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bn3t/ssin-lib"
+  },
+  "homepage": "https://github.com/bn3t/ssin-lib",
   "type": "module",
   "main": "dist/lib/index.cjs",
   "module": "dist/lib/index.js",
