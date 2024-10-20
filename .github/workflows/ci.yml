@@ -54,6 +54,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
+      - uses: oven-sh/setup-bun@v2
       - name: Build project
         run: npm run build
+      - uses: oven-sh/setup-bun@v2
+      - name: Build native executables
+        run: npm run build:native-and-compress
