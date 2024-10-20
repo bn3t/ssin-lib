@@ -20,10 +20,18 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run lint && npm run build:check && npm run build:js",
+    "build": "npm run lint && npm run build:check && npm run build:js && npm run build:pkg && npm run build:zip",
     "build:check": "tsc --noEmit",
     "build:js": "tsup-node --entry src/ssin-cli.ts --entry src/lib/index.ts --format cjs,esm --dts --sourcemap",
-    "clean": "rimraf dist node_modules",
+    "build:pkg": "npm run build:pkg-linux-x64 && npm run build:pkg-darwin-x64 && npm run build:pkg-windows-x64",
+    "build:zip": "npm run build:zip-linux-x64 && npm run build:zip-darwin-x64 && npm run build:zip-windows-x64",
+    "build:zip-darwin-x64": "tar cvfz dist-native/ssin-darwin-x64.tar.gz dist-native/ssin-darwin-x64",
+    "build:zip-linux-x64": "tar cvfz dist-native/ssin-linux-x64.tar.gz dist-native/ssin-linux-x64",
+    "build:zip-windows-x64": "zip dist-native/ssin-windows-x64.zip dist-native/ssin-windows-x64.exe",
+    "build:pkg-darwin-x64": "bun build src/ssin-cli.ts --compile --target=bun-darwin-x64-modern --outfile dist-native/ssin-darwin-x64",
+    "build:pkg-linux-x64": "bun build src/ssin-cli.ts --compile --target=bun-linux-x64-modern --outfile dist-native/ssin-linux-x64",
+    "build:pkg-windows-x64": "bun build src/ssin-cli.ts --compile --target=bun-windows-x64-modern --outfile dist-native/ssin-windows-x64",
+    "clean": "rimraf dist dist-native node_modules",
     "start": "bun ./src/ssin-cli.ts",
     "test": "vitest",
     "lint": "eslint"
