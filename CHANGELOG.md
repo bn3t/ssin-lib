@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.9](https://github.com/bn3t/ssin-lib/compare/v0.0.8...v0.0.9) (2024-10-20)
+
+
+### Miscellaneous Chores
+
+* Publish executable versions ([32a9b88](https://github.com/bn3t/ssin-lib/commit/32a9b88d29ae7d2217b39ac1f10917a39b7cb5b0))
+
 ## [0.0.8](https://github.com/bn3t/ssin-lib/compare/v0.0.7...v0.0.8) (2024-10-16)
 
 
