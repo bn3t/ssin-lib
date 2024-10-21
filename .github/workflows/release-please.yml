@@ -29,13 +29,14 @@ jobs:
       - run: npm ci && npm run build
         if: ${{ steps.release.outputs.release_created }}
       - uses: oven-sh/setup-bun@v2
-      - name: Upload Executable Artifact
+      - name: Build & Upload Executable Artifacts
         if: ${{ steps.release.outputs.release_created }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run build:native-and-compress
           gh release upload ${{ steps.release.outputs.tag_name }} dist-native/ssin-darwin-x64.tar.gz
+          gh release upload ${{ steps.release.outputs.tag_name }} dist-native/ssin-darwin-arm64.tar.gz
           gh release upload ${{ steps.release.outputs.tag_name }} dist-native/ssin-linux-x64.tar.gz
           gh release upload ${{ steps.release.outputs.tag_name }} dist-native/ssin-windows-x64.zip
       - run: npm publish  --access public
