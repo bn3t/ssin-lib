@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.10](https://github.com/bn3t/ssin-lib/compare/v0.0.9...v0.0.10) (2024-10-21)
+
+
+### Miscellaneous Chores
+
+* Add build for darwin arm64 ([42ebd53](https://github.com/bn3t/ssin-lib/commit/42ebd53cb0eb60007eae82b9240eabd58a409b36))
+
 ## [0.0.9](https://github.com/bn3t/ssin-lib/compare/v0.0.8...v0.0.9) (2024-10-20)
 
 
