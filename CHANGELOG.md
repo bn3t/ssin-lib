@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.11](https://github.com/bn3t/ssin-lib/compare/v0.0.10...v0.0.11) (2024-10-25)
+
+
+### Miscellaneous Chores
+
+* Improve library publication ([5430092](https://github.com/bn3t/ssin-lib/commit/54300927bb0bccf419f13a1e7e46b307b464d832))
+
 ## [0.0.10](https://github.com/bn3t/ssin-lib/compare/v0.0.9...v0.0.10) (2024-10-21)
 
 
