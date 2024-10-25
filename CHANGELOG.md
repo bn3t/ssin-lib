@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.12](https://github.com/bn3t/ssin-lib/compare/v0.0.11...v0.0.12) (2024-10-25)
+
+
+### Bug Fixes
+
+* Add more exports ([9ce2220](https://github.com/bn3t/ssin-lib/commit/9ce2220e39136dab75ccb17c91b68886bb6ffac1))
+
 ## [0.0.11](https://github.com/bn3t/ssin-lib/compare/v0.0.10...v0.0.11) (2024-10-25)
 
 
