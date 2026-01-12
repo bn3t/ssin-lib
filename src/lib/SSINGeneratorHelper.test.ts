@@ -77,8 +77,6 @@ describe('SSIN Generator Helper', () => {
     const birthDate = LocalDate.of(1985, 6, 15);
     const gender = Gender.FEMALE;
     const ssin = SSINGeneratorHelper.generate(birthDate, gender, null, Type.REGULAR);
-    console.log(ssin)
-
     const orderNumber = parseInt(ssin.substring(6, 9), 10);
     expect(orderNumber % 2).toBe(0);
   });
