@@ -60,8 +60,8 @@ export class SSINGeneratorHelper {
       order = Math.floor(Math.random() * 999) + 1;
     } else {
       order = 1 + Math.floor(Math.random() * 499) * 2;
-      if (gender === Gender.MALE) {
-        order--;
+      if (gender === Gender.FEMALE) {
+        order++;
       }
     }
     return order.toString().padStart(3, '0');

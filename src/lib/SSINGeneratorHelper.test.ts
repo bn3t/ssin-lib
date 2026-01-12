@@ -57,4 +57,29 @@ describe('SSIN Generator Helper', () => {
     expect(ssin).toBe('40000095579');
     expect(SSINValidatorHelper.isValid(ssin)).toBe(true);
   });
+
+  it('should generate a valid SSIN when order is null', () => {
+    const birthDate = LocalDate.of(1985, 6, 15);
+    const gender = Gender.MALE;
+    const ssin = SSINGeneratorHelper.generate(birthDate, gender, null, Type.REGULAR);
+    expect(SSINValidatorHelper.isValid(ssin)).toBe(true);
+  });
+
+  it('should generate an odd order number for male when order is null', () => {
+    const birthDate = LocalDate.of(1985, 6, 15);
+    const gender = Gender.MALE;
+    const ssin = SSINGeneratorHelper.generate(birthDate, gender, null, Type.REGULAR);
+    const orderNumber = parseInt(ssin.substring(6, 9), 10);
+    expect(orderNumber % 2).toBe(1);
+  });
+
+  it('should generate an even order number for female when order is null', () => {
+    const birthDate = LocalDate.of(1985, 6, 15);
+    const gender = Gender.FEMALE;
+    const ssin = SSINGeneratorHelper.generate(birthDate, gender, null, Type.REGULAR);
+    console.log(ssin)
+
+    const orderNumber = parseInt(ssin.substring(6, 9), 10);
+    expect(orderNumber % 2).toBe(0);
+  });
 });
