@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.13](https://github.com/bn3t/ssin-lib/compare/v0.0.12...v0.0.13) (2026-01-12)
+
+
+### Bug Fixes
+
+* correct order number gender logic and add null order tests ([#20](https://github.com/bn3t/ssin-lib/issues/20)) ([b0109ad](https://github.com/bn3t/ssin-lib/commit/b0109ad6c49bed98c9d366cf2af79cd76eb24441))
+
 ## [0.0.12](https://github.com/bn3t/ssin-lib/compare/v0.0.11...v0.0.12) (2024-10-25)
 
 
